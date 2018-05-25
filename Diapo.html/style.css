@@ -1,0 +1,66 @@
+
+body{
+    background-color: #A17E69; 
+}
+
+figure{
+    height: 532; 
+    width: 424;
+    overflow: hidden;
+    margin: 150px auto;
+    width: 400px;
+}
+
+#diaporama figure img{
+    width: 100%;
+    border: 2px solid black;
+    flex-direction: row;
+    align-content: center;
+    animation: glisse 30s infinite;
+    width: calc(400px * 6);
+}
+
+#diaporama figure{
+    position: relative;
+    display: flex;
+}
+
+@keyframes glisse {
+    0% {
+        transform: translate(0);
+    }
+    7% {
+        transform: translate(0);
+    }
+    14% {
+        transform: translate(-400px);
+    }
+    21% {
+        transform: translate(-400px);
+    }
+    28% {
+        transform: translate(-800px);
+    }
+    35% {
+        transform: translate(-800px);
+    }
+    42% {
+        transform: translate(-1200px);
+    }
+    49% {
+        transform: translate(-1200px);
+    }
+    56% {
+        transform: translate(-1600px);
+    }
+    63% {
+        transform: translate(-1600px);
+    }
+    70% {
+        transform: translate(-2000px);
+    }
+    77% {
+        transform: translate(-2000px);
+    }
+   
+}

@@ -1,0 +1,54 @@
+/* Créez une classe Produit :
+
+    nom
+    prix
+
+Créez une classe Panier avec :
+
+    une méthode ajoute( produit )
+    une méthode retire( produit )
+    une proprieté totalHT
+    une proprieté totalTTC
+
+    var baguette = new Produit( 'Baguette', 0.85); // prix HT
+var croissant = new Produit( 'Croissant', 0.80);
+
+var panier = new Panier();
+panier.ajoute(baguette);
+panier.ajoute(croissant);
+
+console.log(panier.totalHT);
+console.log(panier.totalTTC);   
+
+ */
+
+function Produit(param_nom, param_prix){
+  this.nom = param_nom;
+  this.prix = param_prix;
+} 
+
+function Panier(){
+  this.totalHT = 0;
+  this.totalTTC = 0;
+  this.ajouter_produit = function(produit){
+   this.totalHT = produit.prix + this.totalHT;
+   this.totalTTC = this.totalHT * 1,2;
+  };
+  this.retirer_produit =function(produit){
+    this.totalHT = this.totalHT - produit.prix;
+    this.totalTTC = this.totalHT * 1,2;
+  };
+}
+
+var pain = new Produit('Baguette' , 0.80);
+var croissant = new Produit('Croissant', 0.85);
+var plante = new Produit('Rose', 1.20);
+var lait = new Produit('Lait demi-écrémé', 1.00);
+
+var Mon_Panier = new Panier();
+
+Mon_Panier.retirer_produit(pain);
+Mon_Panier.ajouter_produit(plante);
+Mon_Panier.ajouter_produit(pain);
+
+console.log(Mon_Panier.totalHT);
