@@ -1,30 +1,23 @@
-var SLideshow =(function() {
-    var self = {},
-    config = {
-    }; 
+var images = [];
+var time = 3000;
 
-    setOptions = function() {
-        if (typeof options === 'object' &&
-            Object.keys(options).length > 0)
-        {
-            for (var property in options)
-            {
-                if (config[property] !== undefined)
-                {
-                    config[property] = options[property];
-                }
-            }
-        }
-    }
-    self.init = function(opts) {
-        options = opts || {};
+images[0] = '1.jpg';
+images[1] = '7.jpg';
+images[2] = '6.jpg';
 
-        setOptions();
+function changeImg(){
+    document.slide.src = images[i];
 
-        execute();
-    }
-    execute = function() {
+    if(i < images.length - 1){
+        i++;
+    } else {
+        i = 0;
     }
 
-    return self;
-})();
+    setTimeout("changeImg()", time);
+}
+
+
+
+window.onload = changeImg;
+
